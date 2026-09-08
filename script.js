@@ -50,27 +50,6 @@
   const year = document.querySelector("#current-year");
   if (year) year.textContent = new Date().getFullYear();
 
-  const dot = document.querySelector(".focus-dot");
-  const canAnimate = window.matchMedia("(pointer: fine) and (prefers-reduced-motion: no-preference)").matches;
-  if (dot && canAnimate) {
-    let x = 0;
-    let y = 0;
-    let dotX = 0;
-    let dotY = 0;
-    window.addEventListener("pointermove", (event) => {
-      x = event.clientX;
-      y = event.clientY;
-      document.body.classList.add("pointer-active");
-    }, { passive: true });
-    const follow = () => {
-      dotX += (x - dotX) * 0.12;
-      dotY += (y - dotY) * 0.12;
-      dot.style.transform = `translate(${dotX - 5}px, ${dotY - 5}px)`;
-      window.requestAnimationFrame(follow);
-    };
-    window.requestAnimationFrame(follow);
-  }
-
   const easterEgg = document.querySelector(".volleyball-easter-egg");
   const note = document.querySelector(".volleyball-note");
   if (easterEgg && note) {
