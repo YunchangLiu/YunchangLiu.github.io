@@ -22,7 +22,7 @@
     const fragment = document.createDocumentFragment();
     window.PUBLICATIONS.forEach((publication) => {
       const item = document.createElement("li");
-      const title = document.createElement("p");
+      const title = document.createElement("h3");
       const authors = document.createElement("p");
       const meta = document.createElement("p");
       const journal = document.createElement("cite");
